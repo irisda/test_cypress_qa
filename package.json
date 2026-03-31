@@ -1,0 +1,23 @@
+{
+  "name": "cypress_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@cypress/grep": "^6.0.0",
+    "@cypress/webpack-preprocessor": "^7.0.2",
+    "cypress": "^15.13.0",
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "dotenv": "^17.3.1",
+    "ts-loader": "^9.5.4",
+    "typescript": "^6.0.2",
+    "webpack": "^5.105.4"
+  }
+}
