@@ -16,7 +16,7 @@ End-to-end and API test suite built with Cypress 15, TypeScript, and Page Object
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/irisda/test_cypress_qa.git
 cd cypress_test
 ```
 
@@ -58,8 +58,8 @@ cypress_test/
 │       ├── cypress.d.ts      # TypeScript type declarations for custom commands
 │       └── e2e.js            # Support entry file (imports commands, grep, reporter)
 ├── pages/
-│   ├── LoginPage.ts          # Page Object — login screen
-│   └── InventoryPage.ts      # Page Object — product inventory screen
+│   ├── LoginPage.ts          # Page locators (username, password, login button) and actions (visit, login)
+│   └── InventoryPage.ts      # Page locators (cart badge, add-to-cart button, items) and actions (addFirstProductToCart, getCartBadge)
 ├── tests/
 │   ├── ui/
 │   │   └── addToCard.spec.ts # Task 1 & 2 — UI flow + network validation
@@ -81,6 +81,12 @@ cypress_test/
 
 ```bash
 npx cypress run
+```
+
+### Run all tests (headed)
+
+```bash
+npx cypress run --headed
 ```
 
 ### Run all tests (interactive UI)
@@ -140,5 +146,3 @@ cypress/reports/index.html
 Open it in any browser to view test results with embedded screenshots on failure.
 
 Screenshots on failure are saved to `cypress/screenshots/`.
-
----
