@@ -31,7 +31,12 @@ describe('Task 1 — UI Flow & Network Validation', () => {
       expect(interception.response?.headers['content-type']).to.include('text/html')
 
       // Validate response headers contain required properties
-      expect(interception.response?.headers).to.include.keys(['content-type', 'content-length', 'access-control-allow-origin', 'connection'])
+      expect(interception.response?.headers).to.include.keys([
+        'content-type',
+        'content-length',
+        'access-control-allow-origin',
+        'connection',
+      ])
 
       // Validate response body is not empty and contains app content
       expect(interception.response?.body).to.be.a('string').and.not.be.empty
@@ -39,11 +44,13 @@ describe('Task 1 — UI Flow & Network Validation', () => {
     })
 
     // Get the product image URL from the DOM and validate it via cy.request
-    cy.get('[data-test="inventory-item-sauce-labs-backpack-img"]').invoke('attr', 'src').then((src) => {
-      cy.request(src as string).then((res) => {
-        expect(res.status).to.eq(200)
-        expect(res.headers['content-type']).to.include('image/')
+    cy.get('[data-test="inventory-item-sauce-labs-backpack-img"]')
+      .invoke('attr', 'src')
+      .then((src) => {
+        cy.request(src as string).then((res) => {
+          expect(res.status).to.eq(200)
+          expect(res.headers['content-type']).to.include('image/')
+        })
       })
-    })
   })
 })

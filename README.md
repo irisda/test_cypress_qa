@@ -111,20 +111,20 @@ npx cypress run --env grep="Task 1"
 
 ### Task 1 — UI Flow (`tests/ui/addToCard.spec.ts`)
 
-| Test | Description |
-|------|-------------|
+| Test                                                         | Description                                                      |
+| ------------------------------------------------------------ | ---------------------------------------------------------------- |
 | adds a product to the cart and verifies the badge count is 1 | Logs in, adds the first product to cart, asserts badge shows `1` |
 
 ### Task 2 — Network Validation (`tests/ui/addToCard.spec.ts`)
 
-| Test | Description |
-|------|-------------|
+| Test                                                              | Description                                                                                    |
+| ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | intercepts page load request and validates product image response | Validates page load response (status, headers, body); validates product image via `cy.request` |
 
 ### Task 3 — API Test (`tests/api/users.spec.ts`)
 
-| Test | Description |
-|------|-------------|
+| Test                                                         | Description                                                                          |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
 | should return status 200 with a valid users array for page 2 | GET `/api/users?page=2` — validates status 200, data array, and required user fields |
 
 ---

@@ -1,6 +1,6 @@
 describe('Task 3 — API Test: GET /api/users - Validate paginated users list', () => {
   it('should return status 200 with a valid users array for page 2', () => {
-    const page = 2;
+    const page = 2
     cy.getUsers(page).then((response) => {
       // Validate status code is 200
       expect(response.status).to.eq(200)
